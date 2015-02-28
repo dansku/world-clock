@@ -17,7 +17,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 
 // Start Time
-int second = 20, minute = 48, hour = 20;
+int second = 51, minute = 59, hour = 13;
 
 char BRhours[3];
 
@@ -117,28 +117,28 @@ int hourFR = 0;
 
   // Time in different countries
   // BRAZIL
-  if(hour-BRdiff < 1){ hourBR = hour + BRdiff; } else { hourBR = hour - BRdiff;  }
+  if(hour-BRdiff < 0){ hourBR = hour - BRdiff + 24; } else { hourBR = hour - BRdiff;  }
   char hoursBR[3] = {(hourBR / 10) + 48, (hourBR % 10) + 48, 0};
   u8g.drawStr( 25, 45, hoursBR);
   u8g.drawStr( 37, 45,":");
   u8g.drawStr( 42, 45, minutes);
 
   // USA
-  if(hour-USdiff < 1){ hourUS = hour + USdiff; } else { hourUS = hour - USdiff;  }
+  if(hour-USdiff < 0){ hourUS = hour - USdiff + 24; } else { hourUS = hour - USdiff;  }
   char hoursUS[3] = {(hourUS / 10) + 48, (hourUS % 10) + 48, 0};
   u8g.drawStr(  85, 45, hoursUS);
   u8g.drawStr(  97, 45,":");
   u8g.drawStr( 102, 45, minutes);
   
   // France
-  if(hour-FRdiff < 1){ hourFR = hour + FRdiff; } else { hourFR = hour - FRdiff;  }
+  if(hour-FRdiff < 0){ hourFR = hour - FRdiff + 24; } else { hourFR = hour - FRdiff;  }
   char hoursFR[3] = {(hourFR / 10) + 48, (hourFR % 10) + 48, 0};
   u8g.drawStr(  85, 60, hoursFR);
   u8g.drawStr(  97, 60,":");
   u8g.drawStr( 102, 60, minutes);
   
   // Finland
-  if(hour-FIdiff < 1){ hourFI = hour + FIdiff; } else { hourFI = hour - FIdiff;  }
+  if(hour-FIdiff < 0){ hourFI = hour - FIdiff + 24; } else { hourFI = hour - FIdiff;  }
   char hoursFI[3] = {(hourFI / 10) + 48, (hourFI % 10) + 48, 0};
   u8g.drawStr( 25, 60, hoursFI);
   u8g.drawStr( 37, 60,":");
