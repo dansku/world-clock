@@ -46,15 +46,12 @@ void setup(){
 //	set_rtc_field(t, hourset);
 //	set_rtc_field(t, minset);
 //	set_rtc_field(t, yearset);
-//        set_rtc_field(t, mdayset);
-//        set_rtc_field(t, monset);
+//      set_rtc_field(t, mdayset);
+//      set_rtc_field(t, monset);
 }
 
 void loop(){
-  
-
-
-	//Let' draw
+        //Let' draw
 	u8g.firstPage();  
 	do { draw(); } 
 	while( u8g.nextPage() );
